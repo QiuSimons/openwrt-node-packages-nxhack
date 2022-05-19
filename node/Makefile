@@ -45,6 +45,8 @@ PKG_ASLR_PIE:=0
 include $(INCLUDE_DIR)/host-build.mk
 include $(INCLUDE_DIR)/package.mk
 
+TARGET_CFLAGS:= $(filter-out -ffast-math,$(TARGET_CFLAGS))
+
 define Package/node
   SECTION:=lang
   CATEGORY:=Languages
